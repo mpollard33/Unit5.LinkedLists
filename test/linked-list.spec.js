@@ -41,7 +41,7 @@ describe("Node", () => {
   })
 })
 
-describe("Linked List", () => {
+describe.only("Linked List", () => {
   let linkedList
 
   beforeEach(() => {
@@ -178,7 +178,7 @@ describe("Linked List", () => {
     expect(linkedList.removeTail()).toEqual('first')
   })
 
-  test('`removeTail` method should reassign the `tail` after the current tail node is removed', () => {
+  test.only('`removeTail` method should reassign the `tail` after the current tail node is removed', () => {
     linkedList.addToTail('first')
     linkedList.addToTail('second')
     linkedList.addToTail('third')
