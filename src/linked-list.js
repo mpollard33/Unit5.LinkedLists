@@ -97,19 +97,23 @@ class LinkedList {
     // if tail !exist
   }
 
-  search(value) {
+  search(input) {
     let current = this.head;
-    //set key equal to param
+
     while (current !== null) {
-      for (const key in searchStart) {
-        if (this.key.value === value) {
-          return this.key.value;
+      if (typeof input === "function") {
+        if (comparator(current.value)) {
+          return current.value;
         }
-        search = search.next;
+      } else {
+        if (current.value === input) {
+          return current.value;
+        }
       }
+      current = current.next;
     }
-    // iterate through linkedList doing compare to key
-    // return key if true else return not found
+    // If value is not found return null
+    return null;
   }
 }
 
